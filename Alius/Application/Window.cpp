@@ -16,6 +16,18 @@ Window::Window(int width, int height, const char* windowTitle)
   }
 
   SetupGlfwEvents();
+
+  ALS_EVENTS_SUBSCRIBE(WindowMinimize, [this](WindowMinimizeEvent& e) {
+	// Window inactive
+	m_Active = false;
+  });
+
+  ALS_EVENTS_SUBSCRIBE(WindowResize, [this](WindowResizeEvent& e) {
+	// Window is active again.
+	m_Active = true;
+  });
+
+  m_Active = true;
 }
 
 void
@@ -72,6 +84,12 @@ bool
 Window::ShouldClose() const
 {
   return glfwWindowShouldClose(m_GlfwWindow);
+}
+
+bool
+Window::IsActive() const
+{
+  return m_Active;
 }
 
 void

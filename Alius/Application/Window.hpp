@@ -15,6 +15,7 @@ public:
   ~Window();
 
   bool ShouldClose() const;
+  bool IsActive() const;
 
   void OnUpdate();
 
@@ -23,6 +24,7 @@ private:
 
 private:
   GLFWwindow* m_GlfwWindow;
+  bool m_Active = false;
 };
 
 } // namespace Alius

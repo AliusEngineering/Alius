@@ -28,11 +28,13 @@ public:
 	return ret;
   };
 
-  const std::vector<Ref<Event>>::const_iterator begin() const
+  std::vector<Ref<Event>>::iterator begin() { return s_EventPool.begin(); }
+  std::vector<Ref<Event>>::iterator end() { return s_EventPool.end(); }
+  std::vector<Ref<Event>>::const_iterator begin() const
   {
 	return s_EventPool.begin();
   }
-  const std::vector<Ref<Event>>::const_iterator end() const
+  std::vector<Ref<Event>>::const_iterator end() const
   {
 	return s_EventPool.end();
   }

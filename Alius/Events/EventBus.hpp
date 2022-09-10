@@ -10,7 +10,8 @@
 
 // !!! TEMPORARY SOLUTION
 #define ALS_EVENTS_SUBSCRIBE(type, callback)                                   \
-  Alius::EventBus::Subscribe<Alius::EventType::type, Alius::type##Event>(callback)
+  Alius::EventBus::Subscribe<Alius::EventType::type, Alius::type##Event>(      \
+    callback)
 
 namespace Alius {
 
@@ -43,17 +44,17 @@ public:
 private:
   static void ProcessQueue()
   {
-	for (auto event : s_EventPool) {
-	  try {
-		auto eventCallbacks = s_CallbackMap.at(event->GetType());
-		for (const auto& callback : eventCallbacks) {
-		  if (!event->IsCompleted())
-			std::invoke(callback, event);
-		  else
-			break;
-		}
-	  } catch (std::out_of_range& out_of_range) {
+	for (const auto& event : s_EventPool) {
+	  auto eventCallbacks = s_CallbackMap.find(event->GetType());
+	  if (eventCallbacks == s_CallbackMap.end())
 		continue;
+
+	  for (const auto& callback : eventCallbacks->second) {
+
+		if (!event->IsCompleted())
+		  std::invoke(callback, event);
+		else
+		  break;
 	  }
 	}
 
