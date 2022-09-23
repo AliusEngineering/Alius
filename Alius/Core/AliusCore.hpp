@@ -13,8 +13,22 @@
 // 3rd-party
 #include "Logger.hpp"
 
-// Alius
-#include "Application/Window.hpp"
+// Alius Base
+#include "RendererBase/Renderer.hpp"
+#include "WindowBase/Window.hpp"
+
+#define ALS_LOAD_CORE_MODULE(moduleStorage, moduleIdentifier, module, ...)          \
+  try {                                                                        \
+	auto creator = moduleStorage.at(moduleIdentifier);                         \
+	module = creator(__VA_ARGS__);                                             \
+  } catch (std::out_of_range & oor) {                                          \
+	SQD_ERR(                                                                   \
+	  "Failed to find module {}! It is required to start the application.",    \
+	  moduleIdentifier);                                                       \
+	throw std::runtime_error(                                                  \
+	  "Failed to allocate Alius module: " moduleIdentifier ". It is "          \
+	  "required to run the application!");                                     \
+  }
 
 template<typename T>
 using Ref = std::shared_ptr<T>;

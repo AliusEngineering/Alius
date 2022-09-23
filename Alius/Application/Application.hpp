@@ -1,9 +1,10 @@
 #pragma once
 
 #include "Application/LayerStack.hpp"
-#include "Application/Window.hpp"
 
-#include "Events/EventBus.hpp"
+// Base state
+#include "RendererBase/Renderer.hpp"
+#include "WindowBase/Window.hpp"
 
 namespace Alius {
 
@@ -22,10 +23,16 @@ public:
   void OnUpdate();
 
   static Ref<Window> GetWindow() { return s_Window; }
+  static Ref<Renderer> GetRenderer() { return s_Renderer; }
 
 private:
-  inline static Ref<Window> s_Window{};
+  static Ref<Renderer> s_Renderer;
+  static Ref<Window> s_Window;
+
   LayerStack m_LayerStack;
+
+private:
+  inline static constexpr const char* c_CoreRendererModule = "AlsVkRenderer";
 };
 
 } // namespace Alius

@@ -2,7 +2,16 @@
 	path = 3rd-party/logger
 	url = https://github.com/scriptSQD/untitled-logger
 	branch = master
-[submodule "3rd-party/glfw"]
-	path = 3rd-party/glfw
-	url = https://github.com/glfw/glfw.git
+
+[submodule "Components/Renderer-Base"]
+	path = Components/Renderer-Base
+	url = https://github.com/AliusEngineering/Renderer-Base
+	branch = master
+[submodule "Components/Vulkan-Renderer"]
+	path = Components/Vulkan-Renderer
+	url = https://github.com/AliusEngineering/Vulkan-Renderer
+	branch = master
+[submodule "Components/Window-Base"]
+	path = Components/Window-Base
+	url = https://github.com/AliusEngineering/Window-Base
 	branch = master

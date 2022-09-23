@@ -18,9 +18,15 @@ main()
 {
   Alius::Application app(960, 540, "New Alius App");
 
+  auto renderer = Alius::Application::GetRenderer();
+
   app.PushLayer(new TestLayer());
 
   while (app.IsRunning()) {
+	renderer->BeginFrame();
+	renderer->Draw(3, 0, 1, 0);
+	renderer->EndFrame();
+
 	app.OnUpdate();
   }
 }

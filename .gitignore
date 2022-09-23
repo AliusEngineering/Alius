@@ -2,6 +2,8 @@
 cmake-build-*/
 out/
 build/
+*build/
+build*/
 
 # IDEs
 .vs/

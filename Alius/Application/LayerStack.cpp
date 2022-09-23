@@ -40,4 +40,22 @@ LayerStack::PopOverlay(Layer* overlay)
   }
 }
 
+void
+LayerStack::PopAny(Layer* layer)
+{
+  auto it = std::find(m_Layers.begin(), m_Layers.end(), layer);
+  if (it != m_Layers.end()) {
+	layer->OnDetach();
+	m_Layers.erase(it);
+  }
+}
+
+void
+LayerStack::Shutdown()
+{
+  for (auto layer : m_Layers) {
+	PopAny(layer);
+  }
+}
+
 }
