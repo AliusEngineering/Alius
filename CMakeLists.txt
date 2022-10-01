@@ -16,6 +16,9 @@ elseif (CMAKE_BUILD_TYPE STREQUAL "Release")
     add_compile_definitions(ALS_RELEASE)
 endif ()
 
+# Should be used in all projects depending on Alius to copy resources correctly
+set(ALS_BINARY_LOCATION ${CMAKE_BINARY_DIR})
+
 # Include dependencies
 include("CMakeDependencies.txt")
 

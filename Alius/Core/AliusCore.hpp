@@ -1,5 +1,9 @@
 #pragma once
 
+#ifdef ALS_RELEASE
+#define SQD_DISABLE_LOGGER 1
+#endif
+
 // std
 #include "set"
 #include "string"
@@ -17,7 +21,7 @@
 #include "RendererBase/Renderer.hpp"
 #include "WindowBase/Window.hpp"
 
-#define ALS_LOAD_CORE_MODULE(moduleStorage, moduleIdentifier, module, ...)          \
+#define ALS_LOAD_CORE_MODULE(moduleStorage, moduleIdentifier, module, ...)     \
   try {                                                                        \
 	auto creator = moduleStorage.at(moduleIdentifier);                         \
 	module = creator(__VA_ARGS__);                                             \

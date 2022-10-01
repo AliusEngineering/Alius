@@ -2,5 +2,21 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/3rd-party/logger" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/3rd-party/logger/3rd-party/fmt" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Components/Renderer-Base" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Components/Renderer-Base/3rd-party/glm" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Components/Renderer-Base/Dependencies/Window-Base" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Components/Vulkan-Renderer" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Components/Vulkan-Renderer/3rd-party/logger" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Components/Vulkan-Renderer/3rd-party/logger/3rd-party/fmt" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Components/Vulkan-Renderer/3rd-party/shaderc" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Components/Vulkan-Renderer/Window/3rd-party/glfw" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Components/Vulkan-Renderer/Window/3rd-party/vkfw" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Components/Vulkan-Renderer/Window/dependencies/WindowBase" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Components/Vulkan-Renderer/dependencies/RendererBase" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Components/Vulkan-Renderer/dependencies/RendererBase/3rd-party/glm" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Components/Vulkan-Renderer/dependencies/RendererBase/Dependencies/Window-Base" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Components/Window-Base" vcs="Git" />
   </component>
 </project>

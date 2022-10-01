@@ -20,11 +20,25 @@ main()
 
   auto renderer = Alius::Application::GetRenderer();
 
+  Alius::ObjectData triangleData = {
+	{ -1.0f, 1.0f }, // bottom left
+	{ 1.0f, 1.0f },  // bottom right
+	{ 0.0f, -1.0f }  // top middle
+  };
+
+  triangleData.SetVertexColor(0, { 0.792, 0.773, 0.192 });
+  triangleData.SetVertexColor(1, { 0.953, 0.976, 0.655 });
+  triangleData.SetVertexColor(2, { 1.0, 0.753, 0.796 });
+
+  auto triangle = renderer->CreateObject<Alius::Triangle>(triangleData);
+
   app.PushLayer(new TestLayer());
 
   while (app.IsRunning()) {
 	renderer->BeginFrame();
-	renderer->Draw(3, 0, 1, 0);
+
+	renderer->Draw(triangle);
+
 	renderer->EndFrame();
 
 	app.OnUpdate();

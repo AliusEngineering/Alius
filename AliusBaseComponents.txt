@@ -2,17 +2,6 @@
 
 message(STATUS "[Alius] Setting up core modules!")
 
-# Base
-add_subdirectory("Components/Renderer-Base")
-target_link_libraries(alius PUBLIC
-    RendererBase
-    )
-
-## Temporary
-target_include_directories(alius PUBLIC
-    "Components/Window-Base"
-    )
-
 # Core implementation
 add_subdirectory("Components/Vulkan-Renderer")
 target_link_libraries(alius PUBLIC
