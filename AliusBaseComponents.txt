@@ -5,7 +5,6 @@ message(STATUS "[Alius] Setting up core modules!")
 # Core implementation
 add_subdirectory("Components/Vulkan-Renderer")
 target_link_libraries(alius PUBLIC
-    -Wl,--whole-archive
     AlsVkRenderer
-    -Wl,--no-whole-archive
+    $<TARGET_OBJECTS:AlsVkRenderer>
     )

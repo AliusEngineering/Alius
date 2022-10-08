@@ -38,10 +38,7 @@ target_include_directories(alius PUBLIC
         Alius
         )
 
-target_link_libraries(alius PUBLIC
-        ${LOGGER_LIBS}
-        glfw
-        )
+target_link_libraries(alius PUBLIC ${LOGGER_LIBS} glfw)
 
 # Sandbox application
 add_subdirectory("Sandbox")
