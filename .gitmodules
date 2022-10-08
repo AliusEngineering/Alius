@@ -11,7 +11,3 @@
 	path = Components/Vulkan-Renderer
 	url = https://github.com/AliusEngineering/Vulkan-Renderer
 	branch = master
-[submodule "Components/Window-Base"]
-	path = Components/Window-Base
-	url = https://github.com/AliusEngineering/Window-Base
-	branch = master

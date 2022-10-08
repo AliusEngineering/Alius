@@ -42,25 +42,7 @@ public:
   }
 
 private:
-  static void ProcessQueue()
-  {
-	for (const auto& event : s_EventPool) {
-	  auto eventCallbacks = s_CallbackMap.find(event->GetType());
-	  if (eventCallbacks == s_CallbackMap.end())
-		continue;
-
-	  for (const auto& callback : eventCallbacks->second) {
-
-		if (!event->IsCompleted())
-		  std::invoke(callback, event);
-		else
-		  break;
-	  }
-	}
-
-	// Clear event queue
-	s_EventPool.clear();
-  };
+  static void ProcessQueue();
 
 private:
   inline static std::unordered_map<EventType,

@@ -19,15 +19,6 @@ public:
 	s_EventPool.emplace_back(std::make_shared<E>(event));
   };
 
-  [[nodiscard]] Ref<Event> GetNext()
-  {
-	// Get event and remove from stack
-	auto ret = s_EventPool.back();
-	s_EventPool.pop_back();
-
-	return ret;
-  };
-
   std::vector<Ref<Event>>::iterator begin() { return s_EventPool.begin(); }
   std::vector<Ref<Event>>::iterator end() { return s_EventPool.end(); }
   std::vector<Ref<Event>>::const_iterator begin() const
