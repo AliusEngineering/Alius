@@ -23,7 +23,7 @@
 
 #define ALS_LOAD_CORE_MODULE(moduleStorage, moduleIdentifier, module, ...)     \
   try {                                                                        \
-	auto creator = moduleStorage.at(moduleIdentifier);                         \
+	auto creator = moduleStorage.at(moduleIdentifier).Creator;                 \
 	module = creator(__VA_ARGS__);                                             \
   } catch (std::out_of_range & oor) {                                          \
 	SQD_ERR(                                                                   \
